@@ -1,8 +1,8 @@
-using EventService.Infrastructure;
-using EventService.Application;
-using System.Text.Json.Serialization;
-using EventService.API.Services;
 using Azure.Storage.Blobs;
+using EventService.API.Services;
+using EventService.Application;
+using EventService.Infrastructure;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,10 +33,10 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
 }
 
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseAuthorization();
 
