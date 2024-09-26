@@ -18,7 +18,7 @@ public class Event
     /// </summary>
     public int TypeEvent { get; private set; }
     public DateTime? EndDate { get; private set; }
-    public Guid? CityId { get; private set; }
+    public Guid CityId { get; private set; }
     public Guid? ProgramId { get; private set; } = null;
     public Program? Program { get; private set; }
     public Guid? ThemeId { get; private set; }
@@ -27,7 +27,7 @@ public class Event
 
     public ICollection<Session>? Sessions { get; private set; }
 
-    public Event(string title, string? address, string? description, string? imagePath, DateTime? startDate, int typeEvent, string eventN, string? linkRegister, DateTime? endDate, Guid? cityId, Guid? themeId)
+    public Event(string title, string? address, string? description, string? imagePath, DateTime? startDate, int typeEvent, string eventN, string? linkRegister, DateTime? endDate, Guid cityId, Guid? themeId)
     {
         Id = Guid.NewGuid();
         Title = title;
