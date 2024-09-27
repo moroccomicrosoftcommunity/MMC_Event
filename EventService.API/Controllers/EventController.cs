@@ -1,8 +1,6 @@
 ﻿using EventService.API.Services;
 using EventService.Application.Features.Event.Commands;
 using EventService.Application.Features.Event.Queries;
-using EventService.Application.Services;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventService.APi.Controllers
@@ -11,8 +9,8 @@ namespace EventService.APi.Controllers
     [ApiController]
     public class EventController : ApiControllerBase
     {
-       private readonly IRabbitMQ _rabbitmqServer;
-       private readonly IEventSpeakers _rabbitmqSpeakerServer;
+        private readonly IRabbitMQ _rabbitmqServer;
+        private readonly IEventSpeakers _rabbitmqSpeakerServer;
         public EventController(IRabbitMQ rabbitmqServer, IEventSpeakers rabbitmqSpeakerServer)
         {
             _rabbitmqServer = rabbitmqServer;
@@ -24,6 +22,14 @@ namespace EventService.APi.Controllers
             var events = await Mediator.Send(new EventFindAllQuery());
             return Ok(events);
         }
+
+        [HttpGet("GetLastThree")]
+        public async Task<IActionResult> FindLastThree()
+        {
+            var events = await Mediator.Send(new EventFindAllQuery());
+            return Ok(events.OrderByDescending(d => d.StartDate).Take(3));
+        }
+
         [HttpGet("GetOnlyEvents")]
         public async Task<IActionResult> FindAllEventOnly()
         {
@@ -50,7 +56,7 @@ namespace EventService.APi.Controllers
         public async Task<IActionResult> Find(Guid id)
         {
             var @event = await Mediator.Send(new EventFindQuery(id));
-            
+
             return @event is null ? NotFound() : Ok(@event);
         }
 
@@ -79,7 +85,7 @@ namespace EventService.APi.Controllers
         public async Task<IActionResult> Delete(Guid id)
         {
             var success = await Mediator.Send(new EventDeleteCmd(id));
-            var tt  = await _rabbitmqServer.DeleteMethod("Participant", "Delete",id);
+            var tt = await _rabbitmqServer.DeleteMethod("Participant", "Delete", id);
             var ts = await _rabbitmqSpeakerServer.DeleteMethod("Speaker", "Delete", id);
             return success ? Ok(success) : NotFound();
         }
