@@ -20,7 +20,7 @@ namespace EventService.APi.Controllers
         public async Task<IActionResult> FindAll()
         {
             var events = await Mediator.Send(new EventFindAllQuery());
-            return Ok(events);
+            return Ok(events.OrderByDescending(d => d.StartDate));
         }
 
         [HttpGet("GetLastThree")]
@@ -34,7 +34,7 @@ namespace EventService.APi.Controllers
         public async Task<IActionResult> FindAllEventOnly()
         {
             var events = await Mediator.Send(new EventOnlyFindAllQuery());
-            return Ok(events);
+            return Ok(events.OrderByDescending(d => d.StartDate));
         }
         [HttpGet("GetEventOnlyById/{Id}")]
 
@@ -49,7 +49,7 @@ namespace EventService.APi.Controllers
         public async Task<IActionResult> FindAllByProgramId(Guid Id)
         {
             var events = await Mediator.Send(new EventFindAllByProgramIdQuery(Id));
-            return Ok(events);
+            return Ok(events.OrderByDescending(d => d.StartDate));
         }
 
         [HttpGet("{id}")]
