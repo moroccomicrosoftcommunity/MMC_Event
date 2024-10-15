@@ -21,6 +21,8 @@ public class EventUpdateCmdHandler : IRequestHandler<EventUpdateCmd, EventGetDTO
             request.Address,
             request.Description,
             request.ImagePath,
+            request.ImageSliderlPath,
+            request.ImageListEventPath,
             request.StartDate,
             request.EndDate,
             request.CityId,

@@ -34,21 +34,58 @@ namespace SpeakerService.Api.Controllers
         [HttpPost("/uploadeventimages")]
         public async Task<IActionResult> Uploadevent(Images image)
         {
-            string uniqueFileName = $"{image.EventId}_{image.File.FileName}";
-            var blobClient = _containerClient.GetBlobClient(uniqueFileName);
-            await blobClient.UploadAsync(image.File.OpenReadStream(), true);
-            Ok("File uploaded successfully.");
-            var Data = GetFileUrls(image.EventId);
             var events = await _dbContext.Events.FindAsync(image.EventId);
             if (events == null)
             {
                 throw new InvalidOperationException("event not found");
             }
-
+            string uniqueFileName = $"detailImage_{image.EventId}_{image.File.FileName}";
+            var blobClient = _containerClient.GetBlobClient(uniqueFileName);
+            await blobClient.UploadAsync(image.File.OpenReadStream(), true);
+            //Ok("File uploaded successfully.");
+            var Data = GetFileUrls("detailImage_"+image.EventId);
             events.ImagePath = Data;
             _dbContext.SaveChanges();
             return Ok("uploaded");
         }
+
+        [HttpPost("/uploadsliderimage")]
+        public async Task<IActionResult> UploadSliderImage(Images image)
+        {
+            var events = await _dbContext.Events.FindAsync(image.EventId);
+            if (events == null)
+            {
+                throw new InvalidOperationException("event not found");
+            }
+            string uniqueFileName = $"sliderImage_{image.EventId}_{image.File.FileName}_";
+            var blobClient = _containerClient.GetBlobClient(uniqueFileName);
+            await blobClient.UploadAsync(image.File.OpenReadStream(), true);
+            //Ok("File uploaded successfully.");
+            var Data = GetFileUrls("sliderImage_"+ image.EventId);
+            events.ImageSliderlPath = Data;
+            _dbContext.SaveChanges();
+            return Ok("uploaded");
+        }
+
+        [HttpPost("/uploadimageforlistevent")]
+        public async Task<IActionResult> UploadImageForListEvent(Images image)
+        {
+            var events = await _dbContext.Events.FindAsync(image.EventId);
+            if (events == null)
+            {
+                throw new InvalidOperationException("event not found");
+            }
+            string uniqueFileName = $"listImages_{image.EventId}_{image.File.FileName}";
+            var blobClient = _containerClient.GetBlobClient(uniqueFileName);
+            await blobClient.UploadAsync(image.File.OpenReadStream(), true);
+            //Ok("File uploaded successfully.");
+            var Data = GetFileUrls($"listImages_{image.EventId}");
+            events.ImageListEventPath = Data;
+            _dbContext.SaveChanges();
+            return Ok("uploaded");
+        }
+
+
 
         [HttpGet("count")]
         public int CountFilesInContainer()
@@ -105,7 +142,7 @@ namespace SpeakerService.Api.Controllers
         }
 
         [HttpGet("{fileId}")]
-        public string GetFileUrls(Guid fileId)
+        public string GetFileUrls(string fileId)
         {
             try
             {

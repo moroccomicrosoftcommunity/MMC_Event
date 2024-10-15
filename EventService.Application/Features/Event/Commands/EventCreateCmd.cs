@@ -10,6 +10,8 @@ public record EventCreateCmd
     string? Address,
     string? Description,
     string? ImagePath,
+    string? ImageSliderlPath,
+    string? ImageListEventPath,
     DateTime? StartDate,
     DateTime? EndDate,
     Guid CityId,

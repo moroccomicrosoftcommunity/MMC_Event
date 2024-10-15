@@ -9,6 +9,8 @@ public class Event
     public string? Address { get; private set; }
     public string? Description { get; private set; }
     public string? ImagePath { get; set; }
+    public string?  ImageSliderlPath { get; set; }
+    public string? ImageListEventPath { get; set; }
     public DateTime? StartDate { get; private set; }
     /// <summary>
     /// Le type d'evenement
