@@ -148,7 +148,7 @@ namespace SpeakerService.Api.Controllers
             {
                 List<string> urls = new List<string>();
 
-                foreach (BlobItem blobItem in _containerClient.GetBlobs(prefix: fileId.ToString()))
+                foreach (BlobItem blobItem in _containerClient.GetBlobs(prefix: fileId))
                 {
                     string fileName = blobItem.Name;
                     BlobClient blobClient = _containerClient.GetBlobClient(fileName);

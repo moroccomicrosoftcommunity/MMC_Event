@@ -3,6 +3,7 @@
 
 public class Event
 {
+    //test
     public Guid Id { get; private set; }
     public string EventN { get; private set; }
     public string Title { get; private set; }
