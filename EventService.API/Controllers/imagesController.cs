@@ -43,7 +43,7 @@ namespace SpeakerService.Api.Controllers
             var blobClient = _containerClient.GetBlobClient(uniqueFileName);
             await blobClient.UploadAsync(image.File.OpenReadStream(), true);
             //Ok("File uploaded successfully.");
-            var Data = GetFileUrl("detailImage_"+image.EventId);
+            var Data = GetFileUrls("detailImage_"+image.EventId);
             events.ImagePath = Data;
             _dbContext.SaveChanges();
             return Ok(Data);
@@ -61,7 +61,7 @@ namespace SpeakerService.Api.Controllers
             var blobClient = _containerClient.GetBlobClient(uniqueFileName);
             await blobClient.UploadAsync(image.File.OpenReadStream(), true);
             //Ok("File uploaded successfully.");
-            var Data = GetFileUrl("sliderImage_"+ image.EventId);
+            var Data = GetFileUrls("sliderImage_"+ image.EventId);
             events.ImageSliderlPath = Data;
             _dbContext.SaveChanges();
             return Ok(Data);
@@ -79,7 +79,7 @@ namespace SpeakerService.Api.Controllers
             var blobClient = _containerClient.GetBlobClient(uniqueFileName);
             await blobClient.UploadAsync(image.File.OpenReadStream(), true);
             //Ok("File uploaded successfully.");
-            var Data = GetFileUrl($"listImages_{image.EventId}");
+            var Data = GetFileUrls($"listImages_{image.EventId}");
             events.ImageListEventPath = Data;
             _dbContext.SaveChanges();
             return Ok(Data);
@@ -110,12 +110,12 @@ namespace SpeakerService.Api.Controllers
             return fileNames;
         }
 
-        [HttpGet("{fileId}")]
-        public string GetFileUrl(string fileId)
+        [HttpGet("url")]
+        public string GetFileUrl(string fileName)
         {
             try
             {
-                BlobClient blobClient = _containerClient.GetBlobClient(fileId);
+                BlobClient blobClient = _containerClient.GetBlobClient(fileName);
 
                 BlobSasBuilder sasBuilder = new BlobSasBuilder()
                 {
@@ -130,7 +130,7 @@ namespace SpeakerService.Api.Controllers
                 StorageSharedKeyCredential sharedKeyCredential = new StorageSharedKeyCredential(_containerClient.AccountName, key);
 
                 string sasToken = sasBuilder.ToSasQueryParameters(sharedKeyCredential).ToString();
-                Uri blobUrlWithSas = new Uri(blobClient.Uri, $"{fileId}?{sasToken}");
+                Uri blobUrlWithSas = new Uri(blobClient.Uri, $"{fileName}?{sasToken}");
 
                 return blobUrlWithSas.ToString();
             }
@@ -141,46 +141,46 @@ namespace SpeakerService.Api.Controllers
             }
         }
 
-        //[HttpGet("{fileId}")]
-        //public string GetFileUrls( string fileId)
-        //{
-        //    try
-        //    {
-        //        List<string> urls = new List<string>();
+        [HttpGet("{fileId}")]
+        public string GetFileUrls([FromRoute]string fileId)
+        {
+            try
+            {
+                List<string> urls = new List<string>();
 
-        //        foreach (BlobItem blobItem in _containerClient.GetBlobs(prefix: fileId))
-        //        {
-        //            string fileName = blobItem.Name;
-        //            BlobClient blobClient = _containerClient.GetBlobClient(fileName);
-        //            BlobSasBuilder sasBuilder = new BlobSasBuilder()
-        //            {
-        //                BlobContainerName = _containerClient.Name,
-        //                BlobName = blobClient.Name,
-        //                Resource = "b",
-        //                StartsOn = DateTimeOffset.UtcNow,
-        //                ExpiresOn = DateTimeOffset.UtcNow.AddYears(10)
-        //            };
-        //            sasBuilder.SetPermissions(BlobSasPermissions.Read);
-        //            StorageSharedKeyCredential sharedKeyCredential = new StorageSharedKeyCredential(_containerClient.AccountName, key);
-        //            string sasToken = sasBuilder.ToSasQueryParameters(sharedKeyCredential).ToString();
-        //            Uri blobUrlWithSas = new Uri(blobClient.Uri, $"{fileName}?{sasToken}");
-        //            urls.Add(blobUrlWithSas.ToString());
-        //        }
-        //        if (urls.Count() == 0)
-        //        {
-        //            return "NaN";
-        //        }
-        //        else
-        //        {
-        //            return urls[0];
-        //        }
-        //    }
-        //    catch (RequestFailedException ex)
-        //    {
-        //        Console.WriteLine($"Error: {ex.ErrorCode} - {ex.Message}");
-        //        return null;
-        //    }
-        //}
+                foreach (BlobItem blobItem in _containerClient.GetBlobs(prefix: fileId.ToString()))
+                {
+                    string fileName = blobItem.Name;
+                    BlobClient blobClient = _containerClient.GetBlobClient(fileName);
+                    BlobSasBuilder sasBuilder = new BlobSasBuilder()
+                    {
+                        BlobContainerName = _containerClient.Name,
+                        BlobName = blobClient.Name,
+                        Resource = "b",
+                        StartsOn = DateTimeOffset.UtcNow,
+                        ExpiresOn = DateTimeOffset.UtcNow.AddYears(10)
+                    };
+                    sasBuilder.SetPermissions(BlobSasPermissions.Read);
+                    StorageSharedKeyCredential sharedKeyCredential = new StorageSharedKeyCredential(_containerClient.AccountName, key);
+                    string sasToken = sasBuilder.ToSasQueryParameters(sharedKeyCredential).ToString();
+                    Uri blobUrlWithSas = new Uri(blobClient.Uri, $"{fileName}?{sasToken}");
+                    urls.Add(blobUrlWithSas.ToString());
+                }
+                if (urls.Count() == 0)
+                {
+                    return "NaN";
+                }
+                else
+                {
+                    return urls[0];
+                }
+            }
+            catch (RequestFailedException ex)
+            {
+                Console.WriteLine($"Error: {ex.ErrorCode} - {ex.Message}");
+                return null;
+            }
+        }
 
         [HttpDelete("{fileId}")]
         public IActionResult DeleteBlobsById(string fileId)
