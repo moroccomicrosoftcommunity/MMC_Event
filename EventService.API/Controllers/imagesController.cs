@@ -142,7 +142,7 @@ namespace SpeakerService.Api.Controllers
         }
 
         [HttpGet("{fileId}")]
-        public string GetFileUrls(string fileId)
+        public string GetFileUrls([FromRoute]string fileId)
         {
             try
             {
