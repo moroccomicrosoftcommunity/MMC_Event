@@ -46,7 +46,7 @@ namespace SpeakerService.Api.Controllers
             var Data = GetFileUrls("detailImage_"+image.EventId);
             events.ImagePath = Data;
             _dbContext.SaveChanges();
-            return Ok("uploaded");
+            return Ok(Data);
         }
 
         [HttpPost("/uploadsliderimage")]
@@ -57,14 +57,14 @@ namespace SpeakerService.Api.Controllers
             {
                 throw new InvalidOperationException("event not found");
             }
-            string uniqueFileName = $"sliderImage_{image.EventId}_{image.File.FileName}_";
+            string uniqueFileName = $"sliderImage_{image.EventId}_{image.File.FileName}";
             var blobClient = _containerClient.GetBlobClient(uniqueFileName);
             await blobClient.UploadAsync(image.File.OpenReadStream(), true);
             //Ok("File uploaded successfully.");
             var Data = GetFileUrls("sliderImage_"+ image.EventId);
             events.ImageSliderlPath = Data;
             _dbContext.SaveChanges();
-            return Ok("uploaded");
+            return Ok(Data);
         }
 
         [HttpPost("/uploadimageforlistevent")]
@@ -82,7 +82,7 @@ namespace SpeakerService.Api.Controllers
             var Data = GetFileUrls($"listImages_{image.EventId}");
             events.ImageListEventPath = Data;
             _dbContext.SaveChanges();
-            return Ok("uploaded");
+            return Ok(Data);
         }
 
 
