@@ -200,5 +200,12 @@ namespace SpeakerService.Api.Controllers
                 return StatusCode(500, "An error occurred while deleting blobs.");
             }
         }
+
+
+        [HttpGet]
+        public string GetHAHA() 
+        {
+            return "HAHAHA";
+        }
     }
 }
