@@ -14,7 +14,8 @@ namespace EventService.Infrastructure.Data
         
         DbSet<Event> Events { get; set; }
         DbSet<Program> Programs{ get; set; }
-        DbSet <Session> Sessions { get; set; }      
+        DbSet <Session> Sessions { get; set; }  
+        DbSet<Slider> Sliders { get; set; }
 
         DbSet<T> Set<T>() where T : class;
 

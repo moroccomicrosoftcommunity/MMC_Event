@@ -19,7 +19,7 @@ namespace EventService.Infrastructure.Data
         public DbSet<Event> Events { get; set; }
         public DbSet<Program> Programs { get; set; }
         public DbSet<Session> Sessions { get; set; }
-
+        public DbSet<Slider> Sliders { get; set; }
 
         public new DbSet<T> Set<T>() where T : class => base.Set<T>();
 

@@ -18,19 +18,16 @@ namespace EventService.Application.Services
         public ISessionService SessionService { get; private set; }
 
         public IProgramService ProgramService { get; private set; }
+        public ISliderService SliderService { get; private set; }
 
-
-
-        public UnitOfService(IUnitOfWork uow, IMapper map)
+        public UnitOfService(IUnitOfWork uow, IMapper map, IEventService eventService, ISessionService sessionService, IProgramService programService, ISliderService sliderService)
         {
             _uow = uow;
             _map = map;
-
-            EventService = new EventService(_uow, _map);
-            SessionService = new SessionService(_uow, _map);
-            ProgramService = new ProgramService(_uow, _map);
-
-
+            EventService = eventService;
+            SessionService = sessionService;
+            ProgramService = programService;
+            SliderService = sliderService;
         }
     }
 }

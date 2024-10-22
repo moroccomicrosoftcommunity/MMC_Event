@@ -27,6 +27,10 @@ namespace EventService.Application
 
             //Services Injection
             services.AddScoped<IUnitOfService, UnitOfService>();
+            services.AddScoped<ISliderService, SliderService>();
+            services.AddScoped<IEventService, Services.EventService>();
+            services.AddScoped<IProgramService, ProgramService>();
+            services.AddScoped<ISessionService, SessionService>();
             //Broker Injection
             var AlltheServices = services.BuildServiceProvider().GetService<IUnitOfService>();
 

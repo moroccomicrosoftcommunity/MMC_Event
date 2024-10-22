@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using static System.Collections.Specialized.BitVector32;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using AutoMapper;
+using EventService.Application.Features.Slider.Commands.CreateSlider;
+using EventService.Application.Features.Slider.Commands.UpdateSlider;
 using EventService.Domain.Entities;
 using EventService.Domain.DTOs;
 namespace EventService.Application.Mapping
@@ -38,7 +40,12 @@ namespace EventService.Application.Mapping
             CreateMap<Program, ProgramOnlyGetDTO>();
             CreateMap<ProgramPostDTO, Program>();
             CreateMap<ProgramPutDTO, Program>();
-
+            
+            
+            //SliderMapping
+            CreateMap<Slider, SliderDto>().ReverseMap();
+            CreateMap<Slider, UpdateSliderCommand>().ReverseMap();
+            CreateMap<Slider, CreateSliderCommand>().ReverseMap();
         }
     }
 }

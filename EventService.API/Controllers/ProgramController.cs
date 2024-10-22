@@ -1,5 +1,4 @@
-﻿using EventService.Application.Features.Event.Commands;
-using EventService.Application.Features.Event.Queries;
+﻿
 using EventService.Application.Features.Program.Commands;
 using EventService.Application.Features.Program.Queries;
 using Microsoft.AspNetCore.Mvc;

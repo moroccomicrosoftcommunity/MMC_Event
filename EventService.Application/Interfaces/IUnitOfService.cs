@@ -12,6 +12,7 @@ namespace EventService.Application.Interfaces
         IEventService EventService { get; }
         ISessionService SessionService { get; }
         IProgramService ProgramService { get; }
+        ISliderService SliderService { get; }
 
     }
 }
