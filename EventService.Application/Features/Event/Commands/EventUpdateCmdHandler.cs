@@ -1,17 +1,11 @@
 ﻿using MediatR;
 using EventServices.Application.Interfaces;
 using EventServices.Domain.DTOs;
-
 namespace EventServices.Application.Features.EventFeature.Commands;
-
 public class EventUpdateCmdHandler : IRequestHandler<EventUpdateCmd, EventGetDTO>
 {
     private readonly IUnitOfService _service;
     public EventUpdateCmdHandler(IUnitOfService service) => _service = service;
-
-
-
-
     public async Task<EventGetDTO> Handle(EventUpdateCmd request, CancellationToken cancellationToken)
     {
         var eventPutDTO = new EventPutDTO
@@ -21,7 +15,6 @@ public class EventUpdateCmdHandler : IRequestHandler<EventUpdateCmd, EventGetDTO
             request.Address,
             request.Description,
             request.ImagePath,
-            request.ImageSliderlPath,
             request.ImageListEventPath,
             request.StartDate,
             request.EndDate,
@@ -29,7 +22,6 @@ public class EventUpdateCmdHandler : IRequestHandler<EventUpdateCmd, EventGetDTO
             request.ThemeId,
             request.ProgramId
         );
-
         var @event = await _service.EventService.UpdateAsync(eventPutDTO);
         return @event;
     }
