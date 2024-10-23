@@ -1,4 +1,4 @@
-﻿namespace EventService.Domain.DTOs;
+﻿namespace EventServices.Domain.DTOs;
 
 public record SliderDto(
     Guid Id,

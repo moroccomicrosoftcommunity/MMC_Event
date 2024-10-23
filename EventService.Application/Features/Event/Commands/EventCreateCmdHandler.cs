@@ -23,7 +23,7 @@ public class EventCreateCmdHandler : IRequestHandler<EventCreateCmd, EventGetDTO
     {
         
 
-        var @event = await _service.EventService.CreateAsync(_mapper.Map<Event>(request),request.ImageDetailEventFile,request.ImageSliderEventFile,request.ImageListEventFile);
+        var @event = await _service.EventService.CreateAsync(_mapper.Map<Event>(request),request.ImageDetailEventFile,request.ImageListEventFile);
         return @event;
     }
 }

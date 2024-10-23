@@ -1,12 +1,9 @@
-﻿using EventService.Application.Interfaces;
-using EventService.Application.Services;
-using EventServices.Application.Interfaces;
+﻿using EventServices.Application.Interfaces;
 using EventServices.Application.Mapping;
+using EventServices.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
-
-
-namespace EventServices.Application.Services
+namespace EventServices.Application
 {
     public static class ConfigureServices
     {
@@ -14,7 +11,6 @@ namespace EventServices.Application.Services
         {
             // AutoMapper registration
             services.AddAutoMapper(typeof(AutoMapperProfile));
-
             // MediatR registration
             services.AddMediatR(config =>
             {
@@ -28,7 +24,6 @@ namespace EventServices.Application.Services
             services.AddScoped<ISessionService, SessionService>();
             //Broker Injection
             var AlltheServices = services.BuildServiceProvider().GetService<IUnitOfService>();
-
             return services;
         }
     }

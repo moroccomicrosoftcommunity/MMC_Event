@@ -1,4 +1,5 @@
 ﻿using EventServices.Application.IRepositories;
+using EventServices.Application.IRepositories;
 using EventServices.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
@@ -25,8 +26,6 @@ namespace EventServices.Infrastructure.Repositories
             SessionRepository = sessionRepository;
             SliderRepository = sliderRepository;
         }
-
-
         public async Task<int> CompleteAsync()
             => await _db.SaveChangesAsync();//special method
 

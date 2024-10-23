@@ -1,12 +1,12 @@
-﻿using EventService.APi.Controllers;
-using EventService.Application.Features.Slider.Commands.CreateSlider;
-using EventService.Application.Features.Slider.Commands.DeleteSlider;
-using EventService.Application.Features.Slider.Commands.UpdateSlider;
-using EventService.Application.Features.Slider.Queries.GetAllSliders;
-using EventService.Application.Features.Slider.Queries.GetSlider;
+﻿using EventServices.Application.Features.Slider.Commands.CreateSlider;
+using EventServices.Application.Features.Slider.Commands.DeleteSlider;
+using EventServices.Application.Features.Slider.Commands.UpdateSlider;
+using EventServices.Application.Features.Slider.Queries.GetAllSliders;
+using EventServices.Application.Features.Slider.Queries.GetSlider;
+using EventServices.APi.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EventService.API.Controllers;
+namespace EventServices.API.Controllers;
 [Route("api/[controller]")]
 [ApiController]
 public class SliderController : ApiControllerBase

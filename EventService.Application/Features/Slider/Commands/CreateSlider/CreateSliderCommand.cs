@@ -1,7 +1,7 @@
-﻿using EventService.Domain.DTOs;
+﻿using EventServices.Domain.DTOs;
 using MediatR;
 
-namespace EventService.Application.Features.Slider.Commands.CreateSlider;
+namespace EventServices.Application.Features.Slider.Commands.CreateSlider;
 
 public record CreateSliderCommand(    
     string Title,

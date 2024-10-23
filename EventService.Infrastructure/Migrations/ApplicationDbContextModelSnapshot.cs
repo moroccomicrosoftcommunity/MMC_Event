@@ -127,10 +127,7 @@ namespace EventService.Infrastructure.Migrations
                     b.ToTable("Sessions");
                 });
 
-<<<<<<< HEAD
-            modelBuilder.Entity("EventServices.Domain.Entities.Event", b =>
-=======
-            modelBuilder.Entity("EventService.Domain.Entities.Slider", b =>
+            modelBuilder.Entity("EventServices.Domain.Entities.Slider", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -167,8 +164,7 @@ namespace EventService.Infrastructure.Migrations
                     b.ToTable("Sliders");
                 });
 
-            modelBuilder.Entity("EventService.Domain.Entities.Event", b =>
->>>>>>> a18fd5604255217c475018b9cb6419b7aaa6a2a1
+            modelBuilder.Entity("EventServices.Domain.Entities.Event", b =>
                 {
                     b.HasOne("EventServices.Domain.Entities.Program", "Program")
                         .WithMany("Events")

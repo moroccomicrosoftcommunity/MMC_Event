@@ -11,12 +11,10 @@ namespace EventServices.Application.Services
     {
         private readonly IUnitOfWork _uow;
         private readonly IMapper _map;
-        private readonly IBlobService _blobService;
-        public EventService(IUnitOfWork uow, IMapper map, IBlobService blobService)
+        public EventService(IUnitOfWork uow, IMapper map)
         {
             _uow = uow;
             _map = map;
-            _blobService = blobService;
         }
         public async Task<EventGetDTO> FindAsync(Guid id)
         {
@@ -55,8 +53,6 @@ namespace EventServices.Application.Services
         public async Task<EventGetDTO> CreateAsync(Event @event, IFormFile imageDetailEventFile, IFormFile imageListEventFile)
         {
             @event.Id = Guid.NewGuid();
-            @event.ImageDetailEventPath = await HandleFileUpload(@event.Id, imageDetailEventFile);
-            @event.ImageListEventPath = await HandleFileUpload(@event.Id, imageListEventFile);
             if (!await _uow.EventRepository.PostAsync(@event))
                 return null;
             await _uow.CompleteAsync();
@@ -85,17 +81,6 @@ namespace EventServices.Application.Services
             if (events is null) return null;
 
             return _map.Map<IEnumerable<EventOnlyGetDTO>>(events);
-        }
-        public async Task<string> HandleFileUpload(Guid eventId, IFormFile file)
-        {
-            if (file is not null)
-            {
-                return await _blobService.UploadAsync(eventId, file);
-            }
-            else
-            {
-                return "string";
-            }
         }
     }
 }

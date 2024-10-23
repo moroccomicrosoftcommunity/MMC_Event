@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EventService.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class ini : Migration
+    public partial class CreateTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -28,20 +28,16 @@ namespace EventService.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    EventN = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImageDetailEventPath = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImageSliderEventPath = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImageListEventPath = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    TypeEvent = table.Column<int>(type: "int", nullable: true),
+                    TypeEvent = table.Column<int>(type: "int", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CityId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    CityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ProgramId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    ThemeId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    LinkRegister = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ThemeId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {

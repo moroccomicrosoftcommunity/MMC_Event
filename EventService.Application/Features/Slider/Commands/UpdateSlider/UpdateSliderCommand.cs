@@ -1,7 +1,7 @@
-﻿using EventService.Domain.DTOs;
+﻿using EventServices.Domain.DTOs;
 using MediatR;
 
-namespace EventService.Application.Features.Slider.Commands.UpdateSlider;
+namespace EventServices.Application.Features.Slider.Commands.UpdateSlider;
 
 public record UpdateSliderCommand(    
     Guid Id,

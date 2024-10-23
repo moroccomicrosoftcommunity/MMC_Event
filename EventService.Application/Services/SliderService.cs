@@ -1,8 +1,8 @@
-﻿using EventService.Application.Interfaces;
-using EventService.Application.IRepositories;
-using EventService.Domain.Entities;
+﻿using EventServices.Application.Interfaces;
+using EventServices.Domain.Entities;
+using EventServices.Application.IRepositories;
 
-namespace EventService.Application.Services;
+namespace EventServices.Application.Services;
 
 public class SliderService : ISliderService
 {

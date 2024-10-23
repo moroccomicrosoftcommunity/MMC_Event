@@ -1,10 +1,6 @@
-﻿using EventServices.API;
-using EventServices.API.Services;
-using EventServices.Application.Features.EventFeature.Queries;
+﻿using EventServices.API.Services;
 using EventServices.Application.Features.Session.Commands;
 using EventServices.Application.Features.Session.Queries;
-using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventServices.APi.Controllers

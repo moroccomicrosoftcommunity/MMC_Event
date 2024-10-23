@@ -1,6 +1,4 @@
-﻿
-using EventServices.API;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventServices.APi.Controllers

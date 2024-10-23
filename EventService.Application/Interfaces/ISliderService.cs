@@ -1,6 +1,6 @@
-﻿using EventService.Domain.Entities;
+﻿using EventServices.Domain.Entities;
 
-namespace EventService.Application.Interfaces;
+namespace EventServices.Application.Interfaces;
 
 public interface ISliderService
 {

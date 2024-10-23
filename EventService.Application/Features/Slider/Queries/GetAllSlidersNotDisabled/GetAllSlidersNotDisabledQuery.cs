@@ -1,6 +1,6 @@
-﻿using EventService.Domain.DTOs;
+﻿using EventServices.Domain.DTOs;
 using MediatR;
 
-namespace EventService.Application.Features.Slider.Queries.GetAllSlidersNotDisabled;
+namespace EventServices.Application.Features.Slider.Queries.GetAllSlidersNotDisabled;
 
 public record GetAllSlidersNotDisabledQuery():IRequest<IEnumerable<SliderDto>>;

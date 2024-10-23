@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
-using EventService.Application.Interfaces;
-using EventService.Domain.DTOs;
+using EventServices.Application.Interfaces;
+using EventServices.Domain.DTOs;
+using EventServices.Application.Interfaces;
 using MediatR;
 
-namespace EventService.Application.Features.Slider.Queries.GetAllSliders;
+namespace EventServices.Application.Features.Slider.Queries.GetAllSliders;
 
 public class GetAllSlidersQueryHandler : IRequestHandler<GetAllSlidersQuery,IEnumerable<SliderDto>>
 {
