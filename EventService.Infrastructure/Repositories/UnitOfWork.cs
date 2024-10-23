@@ -15,15 +15,15 @@ namespace EventServices.Infrastructure.Repositories
         public IProgramRepository ProgramRepository { get; private set; }
         public IEventRepository EventRepository { get; private set; }
         public ISessionRepository SessionRepository { get; private set; }
+        public ISliderRepository SliderRepository { get; private set; }
 
-        public UnitOfWork(IApplicationDbContext db)
+        public UnitOfWork(IApplicationDbContext db, IProgramRepository programRepository, IEventRepository eventRepository, ISessionRepository sessionRepository, ISliderRepository sliderRepository)
         {
             _db = db;
-            
-            EventRepository = new EventRepository(_db);
-            SessionRepository = new SessionRepository(_db); 
-            ProgramRepository = new ProgramRepository(_db);
-
+            ProgramRepository = programRepository;
+            EventRepository = eventRepository;
+            SessionRepository = sessionRepository;
+            SliderRepository = sliderRepository;
         }
 
 

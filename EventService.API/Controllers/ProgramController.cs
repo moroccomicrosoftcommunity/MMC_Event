@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 ﻿using EventServices.Application.Features.EventFeature.Commands;
 using EventServices.Application.Features.EventFeature.Queries;
 using EventServices.Application.Features.Program.Commands;
 using EventServices.Application.Features.Program.Queries;
+=======
+﻿
+using EventService.Application.Features.Program.Commands;
+using EventService.Application.Features.Program.Queries;
+>>>>>>> a18fd5604255217c475018b9cb6419b7aaa6a2a1
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventServices.APi.Controllers

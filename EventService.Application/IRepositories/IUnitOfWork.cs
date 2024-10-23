@@ -11,6 +11,7 @@ namespace EventServices.Application.IRepositories
         IEventRepository EventRepository { get; }
         ISessionRepository SessionRepository { get; }
         IProgramRepository ProgramRepository { get; }
+        ISliderRepository SliderRepository { get; }
         Task<int> CompleteAsync();
     }
 }
