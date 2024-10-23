@@ -1,5 +1,5 @@
-﻿using EventService.Application.Interfaces;
-using EventService.Domain.DTOs;
+﻿using EventService.Domain.DTOs;
+using EventServices.Application.Interfaces;
 using MediatR;
 
 namespace EventService.Application.Features.Event.Queries;

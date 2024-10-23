@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using EventService.Domain.DTOs;
+using EventService.Domain.Entities;
 using EventServices.Application.Features.Slider.Commands.CreateSlider;
 using EventServices.Application.Features.Slider.Commands.UpdateSlider;
 using EventServices.Domain.DTOs;

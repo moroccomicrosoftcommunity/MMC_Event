@@ -19,7 +19,7 @@ namespace EventServices.Application
             //Services Injection
             services.AddScoped<IUnitOfService, UnitOfService>();
             services.AddScoped<ISliderService, SliderService>();
-            services.AddScoped<IEventService, EventService>();
+            services.AddScoped<IEventService, Services.EventService>();
             services.AddScoped<IProgramService, ProgramService>();
             services.AddScoped<ISessionService, SessionService>();
             //Broker Injection

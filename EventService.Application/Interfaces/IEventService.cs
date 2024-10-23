@@ -1,4 +1,6 @@
-﻿using EventServices.Domain.DTOs;
+﻿using EventService.Domain.DTOs;
+using EventService.Domain.Entities;
+using EventServices.Domain.DTOs;
 using EventServices.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 

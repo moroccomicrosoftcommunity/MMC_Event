@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using EventService.Domain.DTOs;
+using MediatR;
 using EventServices.Domain.DTOs;
 
 namespace EventServices.Application.Features.EventFeature.Queries;

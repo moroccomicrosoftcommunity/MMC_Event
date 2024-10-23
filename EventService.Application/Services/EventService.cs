@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
+using EventService.Domain.DTOs;
+using EventService.Domain.Entities;
 using EventServices.Application.Interfaces;
 using EventServices.Application.IRepositories;
-using EventServices.Domain.DTOs;
-using EventServices.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 
 namespace EventServices.Application.Services
@@ -85,13 +85,13 @@ namespace EventServices.Application.Services
 
         public async Task<IEnumerable<EventGetDTO>> FindAllPastEvent()
         {
-            IEnumerable<Event> events = await _uow.EventRepository.GetAllAsync( e => e.EndDate < DateTime.Today,e => e.Program, e => e.Sessions);
+            IEnumerable<Event> events = await _uow.EventRepository.GetAllAsync( e => e.EndDate < DateTime.Today);
             return _map.Map<IEnumerable<EventGetDTO>>(events);
         }
 
         public async Task<IEnumerable<EventGetDTO>> FindNextEvent()
         {
-            IEnumerable<Event> events = await _uow.EventRepository.GetAllAsync(e=>e.StartDate >= DateTime.Today && e.IsAvailable,e => e.Program, e => e.Sessions);
+            IEnumerable<Event> events = await _uow.EventRepository.GetAllAsync(e=>e.StartDate >= DateTime.Today && e.IsAvailable);
             return _map.Map<IEnumerable<EventGetDTO>>(events);
         }
     }

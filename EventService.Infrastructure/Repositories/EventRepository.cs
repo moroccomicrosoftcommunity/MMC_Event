@@ -3,6 +3,7 @@ using EventServices.Domain.Entities;
 using EventServices.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using EventService.Domain.Entities;
 
 namespace EventServices.Infrastructure.Repositories
 {

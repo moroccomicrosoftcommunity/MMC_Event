@@ -1,4 +1,4 @@
-﻿using EventServices.Domain.DTOs;
+﻿using EventService.Domain.DTOs;
 using MediatR;
 
 

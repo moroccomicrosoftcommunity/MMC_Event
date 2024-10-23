@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EventService.Domain.Enums;
+using EventServices.Domain.DTOs;
 
 namespace EventService.Domain.DTOs
 {

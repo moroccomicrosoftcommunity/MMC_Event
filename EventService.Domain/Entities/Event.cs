@@ -1,4 +1,5 @@
 ﻿using EventService.Domain.Enums;
+using EventServices.Domain.Entities;
 
 namespace EventService.Domain.Entities;
 
