@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventService.Application.Interfaces
+namespace EventServices.Application.Interfaces
 {
     public interface IUnitOfService
     {
@@ -12,6 +12,7 @@ namespace EventService.Application.Interfaces
         IEventService EventService { get; }
         ISessionService SessionService { get; }
         IProgramService ProgramService { get; }
+        IBlobService BlobService { get; }
 
     }
 }

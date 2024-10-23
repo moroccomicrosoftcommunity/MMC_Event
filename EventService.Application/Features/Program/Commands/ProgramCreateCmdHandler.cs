@@ -1,10 +1,10 @@
 ﻿using MediatR;
-using EventService.Application.Interfaces;
-using EventService.Domain.DTOs;
-using EventService.Application.Features.Program.Commands;
+using EventServices.Application.Interfaces;
+using EventServices.Domain.DTOs;
+using EventServices.Application.Features.Program.Commands;
 using Azure.Core;
 
-namespace EventService.Application.Features.Program.Commands;
+namespace EventServices.Application.Features.Program.Commands;
 
 public class ProgramCreateCmdHandler : IRequestHandler<ProgramCreateCmd, ProgramGetDTO>
 {

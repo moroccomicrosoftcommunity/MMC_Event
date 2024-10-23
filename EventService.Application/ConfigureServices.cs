@@ -1,38 +1,36 @@
-﻿using EventService.Application.Interfaces;
-using EventService.Application.Mapping;
-using EventService.Application.Services;
+﻿using EventServices.Application.Interfaces;
+using EventServices.Application.Mapping;
+using EventServices.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EventService.Application
+public static class ConfigureServices
 {
-
-    public static class ConfigureServices
+    public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
-        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+        // AutoMapper registration
+        services.AddAutoMapper(typeof(AutoMapperProfile));
+
+        // MediatR registration
+        services.AddMediatR(config =>
         {
-            //Auto mapper
-            services.AddAutoMapper(typeof(AutoMapperProfile));
+            config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+        });
 
-            //MediatR
-            services.AddMediatR(config =>
-            {
-                config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-            });
+        // Services Injection
+        services.AddScoped<IUnitOfService, UnitOfService>();
+        services.AddTransient<IBlobService, BlobService>();
+        services.AddTransient<ISessionService, SessionService>();
+        services.AddTransient<IProgramService, ProgramService>();
+        services.AddTransient<IEventService, EventService>();
 
-            //Services Injection
-            services.AddScoped<IUnitOfService, UnitOfService>();
-            //Broker Injection
-            var AlltheServices = services.BuildServiceProvider().GetService<IUnitOfService>();
+        // Broker Injection - Use a factory method to resolve IUnitOfService
+        services.AddSingleton<RabbitMQServer>(serviceProvider =>
+        {
+            var unitOfService = serviceProvider.GetRequiredService<IUnitOfService>();
+            return new RabbitMQServer(unitOfService);
+        });
 
-            services.AddSingleton<RabbitMQServer>(new RabbitMQServer(AlltheServices));
-            
-            return services;
-        }
+        return services;
     }
 }

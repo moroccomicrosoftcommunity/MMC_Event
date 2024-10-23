@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventService.Application.IRepositories
+namespace EventServices.Application.IRepositories
 {
     public interface IUnitOfWork
     {

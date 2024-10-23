@@ -1,31 +1,23 @@
 ﻿using AutoMapper;
-using EventService.Application.Interfaces;
-using EventService.Application.IRepositories;
-using EventService.Domain.DTOs;
-using EventService.Domain.Entities;
+using EventServices.Application.Interfaces;
+using EventServices.Application.IRepositories;
+using EventServices.Domain.DTOs;
+using EventServices.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EventService.Application.Services
+namespace EventServices.Application.Services
 {
     public class EventService : IEventService
     {
         private readonly IUnitOfWork _uow;
         private readonly IMapper _map;
-        public EventService(IUnitOfWork uow, IMapper map)
+        private readonly IBlobService _blobService;
+        public EventService(IUnitOfWork uow, IMapper map, IBlobService blobService)
         {
             _uow = uow;
             _map = map;
+            _blobService = blobService;
         }
-
-
-
-
         public async Task<EventGetDTO> FindAsync(Guid id)
         {
             var @event = await _uow.EventRepository.GetAsync(id,e=>e.Program,e=>e.Sessions);
@@ -60,12 +52,13 @@ namespace EventService.Application.Services
 
             return _map.Map<IEnumerable<EventGetDTO>>(events);
         }
-        public async Task<EventGetDTO> CreateAsync(EventPostDTO eventPostDTO)
+        public async Task<EventGetDTO> CreateAsync(Event @event, IFormFile imageDetailEventFile, IFormFile imageListEventFile)
         {
-            var @event = _map.Map<Event>(eventPostDTO);
+            @event.Id = Guid.NewGuid();
+            @event.ImageDetailEventPath = await HandleFileUpload(@event.Id, imageDetailEventFile);
+            @event.ImageListEventPath = await HandleFileUpload(@event.Id, imageListEventFile);
             if (!await _uow.EventRepository.PostAsync(@event))
                 return null;
-
             await _uow.CompleteAsync();
             var createdEvent = await FindAsync(@event.Id);
             return createdEvent;
@@ -92,6 +85,17 @@ namespace EventService.Application.Services
             if (events is null) return null;
 
             return _map.Map<IEnumerable<EventOnlyGetDTO>>(events);
+        }
+        public async Task<string> HandleFileUpload(Guid eventId, IFormFile file)
+        {
+            if (file is not null)
+            {
+                return await _blobService.UploadAsync(eventId, file);
+            }
+            else
+            {
+                return "string";
+            }
         }
     }
 }

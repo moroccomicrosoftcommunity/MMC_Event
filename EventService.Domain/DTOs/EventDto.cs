@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EventService.Domain.DTOs
+﻿namespace EventServices.Domain.DTOs
 {
 
     public record EventGetDTO
@@ -13,8 +7,7 @@ namespace EventService.Domain.DTOs
         string Title,
         string? Address,
         string? Description,
-        string? ImagePath,
-        string? ImageSliderlPath,
+        string? ImageDetailEventPath,
         string? ImageListEventPath,
         DateTime? StartDate,
         DateTime? EndDate,
@@ -33,7 +26,6 @@ namespace EventService.Domain.DTOs
         string? Address,
         string? Description,
         string? ImagePath,
-        string? ImageSliderlPath,
         string? ImageListEventPath,
         DateTime? StartDate,
         DateTime? EndDate,
@@ -49,7 +41,6 @@ namespace EventService.Domain.DTOs
         string? Address,
         string? Description,
         string? ImagePath,
-        string? ImageSliderlPath,
         string? ImageListEventPath,
         DateTime? StartDate,
         DateTime? EndDate,
@@ -65,7 +56,6 @@ namespace EventService.Domain.DTOs
         string? Address,
         string? Description,
         string? ImagePath,
-        string? ImageSliderlPath,
         string? ImageListEventPath,
         DateTime? StartDate,
         DateTime? EndDate,

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventService.Application.Features.Session.Commands
+namespace EventServices.Application.Features.Session.Commands
 {
     public record SessionDeleteCmd(Guid Id) : IRequest<bool>;
 }

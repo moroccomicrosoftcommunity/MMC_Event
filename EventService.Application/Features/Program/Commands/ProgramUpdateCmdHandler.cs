@@ -1,8 +1,8 @@
 ﻿using MediatR;
-using EventService.Application.Interfaces;
-using EventService.Domain.DTOs;
+using EventServices.Application.Interfaces;
+using EventServices.Domain.DTOs;
 
-namespace EventService.Application.Features.Program.Commands;
+namespace EventServices.Application.Features.Program.Commands;
 
 public class ProgramUpdateCmdHandler : IRequestHandler<ProgramUpdateCmd, ProgramGetDTO>
 {

@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using EventService.Domain.DTOs;
+using EventServices.Domain.DTOs;
 
-namespace EventService.Application.Features.Program.Commands;
+namespace EventServices.Application.Features.Program.Commands;
 
 public record ProgramUpdateCmd(Guid Id,
         string Title)

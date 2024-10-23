@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using EventService.Domain.DTOs;
+using EventServices.Domain.DTOs;
 
-namespace EventService.Application.Features.Event.Commands;
+namespace EventServices.Application.Features.EventFeature.Commands;
 
 public record EventUpdateCmd
 (
@@ -10,7 +10,6 @@ public record EventUpdateCmd
     string? Address,
     string? Description,
     string? ImagePath,
-    string? ImageSliderlPath,
     string? ImageListEventPath,
     DateTime? StartDate,
     DateTime? EndDate,

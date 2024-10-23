@@ -1,17 +1,17 @@
 ﻿using MediatR;
-using EventService.Domain.DTOs;
+using EventServices.Domain.DTOs;
 using Azure.Core;
+using Microsoft.AspNetCore.Http;
 
-namespace EventService.Application.Features.Event.Commands;
+namespace EventServices.Application.Features.EventFeature.Commands;
 
 public record EventCreateCmd
 (
     string Title,
     string? Address,
     string? Description,
-    string? ImagePath,
-    string? ImageSliderlPath,
-    string? ImageListEventPath,
+    IFormFile? ImageDetailEventFile,
+    IFormFile? ImageListEventFile,
     DateTime? StartDate,
     DateTime? EndDate,
     Guid CityId,

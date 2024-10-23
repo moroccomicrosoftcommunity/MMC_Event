@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 using static System.Collections.Specialized.BitVector32;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using AutoMapper;
-using EventService.Domain.Entities;
-using EventService.Domain.DTOs;
-namespace EventService.Application.Mapping
+using EventServices.Domain.Entities;
+using EventServices.Domain.DTOs;
+using EventServices.Application.Features.EventFeature.Commands;
+namespace EventServices.Application.Mapping
 {
 
     public class AutoMapperProfile : Profile
@@ -21,6 +22,7 @@ namespace EventService.Application.Mapping
             CreateMap<Event, EventGetDTO>();
             CreateMap<Event, EventOnlyGetDTO>();
             CreateMap<EventPostDTO, Event>();
+            CreateMap<EventCreateCmd, Event>();
             CreateMap<EventPutDTO, Event>();
 
 

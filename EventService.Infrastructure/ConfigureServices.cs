@@ -1,6 +1,6 @@
-﻿using EventService.Application.IRepositories;
-using EventService.Infrastructure.Data;
-using EventService.Infrastructure.Repositories;
+﻿using EventServices.Application.IRepositories;
+using EventServices.Infrastructure.Data;
+using EventServices.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventService.Infrastructure
+namespace EventServices.Infrastructure
 {
 
     public static class ConfigureServices

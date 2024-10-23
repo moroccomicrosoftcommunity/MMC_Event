@@ -1,15 +1,15 @@
 ﻿using AutoMapper;
-using EventService.Application.Interfaces;
-using EventService.Application.IRepositories;
-using EventService.Domain.DTOs;
-using EventService.Domain.Entities;
+using EventServices.Application.Interfaces;
+using EventServices.Application.IRepositories;
+using EventServices.Domain.DTOs;
+using EventServices.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventService.Application.Services
+namespace EventServices.Application.Services
 {
 
     public class SessionService : ISessionService

@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using EventService.API.Services;
+using EventServices.API.Services;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 

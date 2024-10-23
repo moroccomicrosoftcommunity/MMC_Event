@@ -1,4 +1,4 @@
-﻿namespace EventService.Domain.Entities;
+﻿namespace EventServices.Domain.Entities;
 
 
 public class Event
@@ -9,8 +9,8 @@ public class Event
     public string? Title { get;  set; }
     public string? Address { get;  set; }
     public string? Description { get;  set; }
-    public string? ImagePath { get; set; }
-    public string?  ImageSliderlPath { get; set; }
+    public string? ImageDetailEventPath { get; set; }
+    public string?  ImageSliderEventPath { get; set; }
     public string? ImageListEventPath { get; set; }
     public DateTime? StartDate { get;  set; }
     /// <summary>
