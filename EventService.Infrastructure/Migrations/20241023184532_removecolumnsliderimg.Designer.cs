@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventService.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241022195518_addingSlider")]
-    partial class addingSlider
+    [Migration("20241023184532_removecolumnsliderimg")]
+    partial class removecolumnsliderimg
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,14 +46,20 @@ namespace EventService.Infrastructure.Migrations
                     b.Property<string>("EventN")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("EventStatus")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GalleryLink")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageListEventPath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageSliderlPath")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LinkRegister")
                         .HasColumnType("nvarchar(max)");
@@ -72,6 +78,9 @@ namespace EventService.Infrastructure.Migrations
 
                     b.Property<int?>("TypeEvent")
                         .HasColumnType("int");
+
+                    b.Property<string>("YoutubeLink")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

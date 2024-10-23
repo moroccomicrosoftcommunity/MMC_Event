@@ -4,12 +4,6 @@ using EventService.Application.IRepositories;
 using EventService.Domain.DTOs;
 using EventService.Domain.Entities;
 
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventService.Application.Services
 {
@@ -54,7 +48,7 @@ namespace EventService.Application.Services
         }
         public async Task<IEnumerable<EventGetDTO>> FindAllAsync()
         {
-            var events = await _uow.EventRepository.GetAllAsync(e => e.Program, e => e.Sessions);
+            var events = await _uow.EventRepository.GetAllAsync(null,e => e.Program, e => e.Sessions);
 
             if (events is null) return null;
 
@@ -92,6 +86,18 @@ namespace EventService.Application.Services
             if (events is null) return null;
 
             return _map.Map<IEnumerable<EventOnlyGetDTO>>(events);
+        }
+
+        public async Task<IEnumerable<EventGetDTO>> FindAllPastEvent()
+        {
+            IEnumerable<Event> events = await _uow.EventRepository.GetAllAsync( e => e.EndDate < DateTime.Today,e => e.Program, e => e.Sessions);
+            return _map.Map<IEnumerable<EventGetDTO>>(events);
+        }
+
+        public async Task<IEnumerable<EventGetDTO>> FindNextEvent()
+        {
+            IEnumerable<Event> events = await _uow.EventRepository.GetAllAsync(e=>e.StartDate >= DateTime.Today && e.IsAvailable,e => e.Program, e => e.Sessions);
+            return _map.Map<IEnumerable<EventGetDTO>>(events);
         }
     }
 }

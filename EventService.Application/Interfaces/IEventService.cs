@@ -18,5 +18,7 @@ namespace EventService.Application.Interfaces
         Task<EventGetDTO> UpdateAsync(EventPutDTO eventPutDTO);
         Task<IEnumerable<EventGetDTO>> FindAllByProgramIdAsync(Guid Id);
         Task<bool> DeleteAsync(Guid id);
+        Task<IEnumerable<EventGetDTO>> FindAllPastEvent();
+        Task<IEnumerable<EventGetDTO>> FindNextEvent();
     }
 }

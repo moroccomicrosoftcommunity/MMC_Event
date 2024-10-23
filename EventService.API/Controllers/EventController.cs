@@ -89,5 +89,22 @@ namespace EventService.APi.Controllers
             var ts = await _rabbitmqSpeakerServer.DeleteMethod("Speaker", "Delete", id);
             return success ? Ok(success) : NotFound();
         }
+        
+        
+        [HttpGet("GetNextEvent")]
+        public async Task<IActionResult> GetNextEvent()
+        {
+            var events = await Mediator.Send(new FindNextEventQuery());
+            return Ok(events);
+        }
+        
+        [HttpGet("GetPastEvent")]
+        public async Task<IActionResult> GetPastEvent()
+        {
+            var events = await Mediator.Send(new FindAllPastEventQuery());
+            return Ok(events);
+        }
+        
+        
     }
 }

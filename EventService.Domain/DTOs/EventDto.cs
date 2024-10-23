@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EventService.Domain.Enums;
 
 namespace EventService.Domain.DTOs
 {
@@ -14,8 +15,12 @@ namespace EventService.Domain.DTOs
         string? Address,
         string? Description,
         string? ImagePath,
-        string? ImageSliderlPath,
         string? ImageListEventPath,
+        EventType? TypeEvent,
+        bool IsAvailable,
+        string? YoutubeLink,
+        string? GalleryLink,
+        EventStatus? EventStatus,
         DateTime? StartDate,
         DateTime? EndDate,
         Guid CityId, 
@@ -33,8 +38,12 @@ namespace EventService.Domain.DTOs
         string? Address,
         string? Description,
         string? ImagePath,
-        string? ImageSliderlPath,
         string? ImageListEventPath,
+        EventType? TypeEvent,
+        bool IsAvailable,
+        string? YoutubeLink,
+        string? GalleryLink,
+        EventStatus? EventStatus,
         DateTime? StartDate,
         DateTime? EndDate,
         Guid CityId,
@@ -49,8 +58,12 @@ namespace EventService.Domain.DTOs
         string? Address,
         string? Description,
         string? ImagePath,
-        string? ImageSliderlPath,
         string? ImageListEventPath,
+        EventType? TypeEvent,
+        bool IsAvailable,
+        string? YoutubeLink,
+        string? GalleryLink,
+        EventStatus? EventStatus,
         DateTime? StartDate,
         DateTime? EndDate,
         Guid CityId,
@@ -65,8 +78,12 @@ namespace EventService.Domain.DTOs
         string? Address,
         string? Description,
         string? ImagePath,
-        string? ImageSliderlPath,
         string? ImageListEventPath,
+        EventType? TypeEvent,
+        bool IsAvailable,
+        string? YoutubeLink,
+        string? GalleryLink,
+        EventStatus? EventStatus,
         DateTime? StartDate,
         DateTime? EndDate,
         Guid CityId,
