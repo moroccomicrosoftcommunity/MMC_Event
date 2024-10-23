@@ -2,7 +2,7 @@
 using EventService.Domain.DTOs;
 using EventService.Domain.Enums;
 
-namespace EventService.Application.Features.Event.Commands;
+namespace EventServices.Application.Features.EventFeature.Commands;
 
 public record EventUpdateCmd
 (

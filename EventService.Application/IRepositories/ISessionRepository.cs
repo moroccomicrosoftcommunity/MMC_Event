@@ -1,4 +1,4 @@
-﻿using EventService.Domain.Entities;
+﻿using EventServices.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventService.Application.IRepositories
+namespace EventServices.Application.IRepositories
 {
     public interface ISessionRepository : IRepository<Session>
     {

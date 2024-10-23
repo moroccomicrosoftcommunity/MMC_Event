@@ -1,9 +1,10 @@
 ﻿using MediatR;
-using EventService.Domain.DTOs;
+using EventServices.Domain.DTOs;
 using Azure.Core;
 using EventService.Domain.Enums;
+using Microsoft.AspNetCore.Http;
 
-namespace EventService.Application.Features.Event.Commands;
+namespace EventServices.Application.Features.EventFeature.Commands;
 
 public record EventCreateCmd
 (

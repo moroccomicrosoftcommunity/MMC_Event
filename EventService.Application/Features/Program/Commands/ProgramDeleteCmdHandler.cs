@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using EventService.Application.Interfaces;
+using EventServices.Application.Interfaces;
 
-namespace EventService.Application.Features.Program.Commands;
+namespace EventServices.Application.Features.Program.Commands;
     
 public class ProgramDeleteCmdHandler : IRequestHandler<ProgramDeleteCmd, bool>
 {

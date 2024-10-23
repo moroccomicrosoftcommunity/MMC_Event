@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using EventService.Application.Interfaces;
-using EventService.Application.IRepositories;
-using EventService.Domain.DTOs;
-using EventService.Domain.Entities;
+using EventServices.Application.Interfaces;
+using EventServices.Application.IRepositories;
+using EventServices.Domain.DTOs;
+using EventServices.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 
-
-namespace EventService.Application.Services
+namespace EventServices.Application.Services
 {
     public class EventService : IEventService
     {
@@ -16,10 +16,6 @@ namespace EventService.Application.Services
             _uow = uow;
             _map = map;
         }
-
-
-
-
         public async Task<EventGetDTO> FindAsync(Guid id)
         {
             var @event = await _uow.EventRepository.GetAsync(id,e=>e.Program,e=>e.Sessions);
@@ -54,12 +50,11 @@ namespace EventService.Application.Services
 
             return _map.Map<IEnumerable<EventGetDTO>>(events);
         }
-        public async Task<EventGetDTO> CreateAsync(EventPostDTO eventPostDTO)
+        public async Task<EventGetDTO> CreateAsync(Event @event, IFormFile imageDetailEventFile, IFormFile imageListEventFile)
         {
-            var @event = _map.Map<Event>(eventPostDTO);
+            @event.Id = Guid.NewGuid();
             if (!await _uow.EventRepository.PostAsync(@event))
                 return null;
-
             await _uow.CompleteAsync();
             var createdEvent = await FindAsync(@event.Id);
             return createdEvent;

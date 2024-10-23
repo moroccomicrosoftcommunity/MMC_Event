@@ -1,12 +1,13 @@
-﻿using EventService.Application.IRepositories;
-using EventService.Infrastructure.Data;
+﻿using EventServices.Application.IRepositories;
+using EventServices.Application.IRepositories;
+using EventServices.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventService.Infrastructure.Repositories
+namespace EventServices.Infrastructure.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -25,8 +26,6 @@ namespace EventService.Infrastructure.Repositories
             SessionRepository = sessionRepository;
             SliderRepository = sliderRepository;
         }
-
-
         public async Task<int> CompleteAsync()
             => await _db.SaveChangesAsync();//special method
 

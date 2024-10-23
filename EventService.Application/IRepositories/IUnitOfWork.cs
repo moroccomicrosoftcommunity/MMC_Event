@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EventServices.Application.IRepositories;
 
-namespace EventService.Application.IRepositories
+namespace EventServices.Application.IRepositories
 {
     public interface IUnitOfWork
     {

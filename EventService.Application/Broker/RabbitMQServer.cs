@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Threading.Tasks;
-using EventService.Application.Interfaces;
+using EventServices.Application.Interfaces;
 using Newtonsoft.Json;
 
 using RabbitMQ.Client;

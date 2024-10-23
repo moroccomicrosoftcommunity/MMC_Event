@@ -1,9 +1,9 @@
 ﻿using MediatR;
-using EventService.Application.Interfaces;
-using EventService.Domain.DTOs;
-using EventService.Application.Features.Program.Queries;
+using EventServices.Application.Interfaces;
+using EventServices.Domain.DTOs;
+using EventServices.Application.Features.Program.Queries;
 
-namespace EventService.Application.Features.Program.Queries;
+namespace EventServices.Application.Features.Program.Queries;
 
 public class ProgramFindAllQueryHandler : IRequestHandler<ProgramFindAllQuery, IEnumerable<ProgramGetDTO>>
 {

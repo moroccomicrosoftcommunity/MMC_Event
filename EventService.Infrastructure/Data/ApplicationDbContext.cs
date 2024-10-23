@@ -1,15 +1,8 @@
-﻿using EventService.Domain.Entities;
+﻿using EventServices.Domain.Entities;
+using EventServices.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Collections.Specialized.BitVector32;
 
-namespace EventService.Infrastructure.Data
+namespace EventServices.Infrastructure.Data
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {

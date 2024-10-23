@@ -1,4 +1,4 @@
-﻿using EventService.Application.Interfaces;
+﻿using EventServices.Application.Interfaces;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EventService.Application.Features.Session.Commands
+namespace EventServices.Application.Features.Session.Commands
 {
     public class SessionDeleteCmdHandler : IRequestHandler<SessionDeleteCmd, bool>
     {

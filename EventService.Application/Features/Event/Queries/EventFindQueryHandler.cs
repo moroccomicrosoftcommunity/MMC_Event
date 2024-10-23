@@ -1,8 +1,8 @@
 ﻿using MediatR;
-using EventService.Application.Interfaces;
-using EventService.Domain.DTOs;
+using EventServices.Application.Interfaces;
+using EventServices.Domain.DTOs;
 
-namespace EventService.Application.Features.Event.Queries;
+namespace EventServices.Application.Features.EventFeature.Queries;
 
 public class EventFindQueryHandler : IRequestHandler<EventFindQuery, EventGetDTO>
 {

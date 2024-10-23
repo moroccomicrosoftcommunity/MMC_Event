@@ -1,8 +1,8 @@
-﻿using EventService.Domain.DTOs;
+﻿using EventServices.Domain.DTOs;
 using MediatR;
 
 
 
-namespace EventService.Application.Features.Event.Queries;
+namespace EventServices.Application.Features.EventFeature.Queries;
 
 public record EventOnlyFindAllQuery : IRequest<IEnumerable<EventOnlyGetDTO>>;

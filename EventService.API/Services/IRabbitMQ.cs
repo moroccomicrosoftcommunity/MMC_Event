@@ -1,4 +1,4 @@
-﻿namespace EventService.API.Services
+﻿namespace EventServices.API.Services
 {
     public interface IRabbitMQ
     {

@@ -1,4 +1,4 @@
-﻿namespace EventService.Domain.Entities;
+﻿namespace EventServices.Domain.Entities;
 
 public class Slider
 {

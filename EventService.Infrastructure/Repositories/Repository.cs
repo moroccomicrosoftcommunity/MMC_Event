@@ -1,14 +1,9 @@
-﻿using EventService.Application.IRepositories;
-using EventService.Infrastructure.Data;
+﻿using EventServices.Application.IRepositories;
+using EventServices.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EventService.Infrastructure.Repositories
+namespace EventServices.Infrastructure.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
@@ -20,10 +15,6 @@ namespace EventService.Infrastructure.Repositories
             _context = db;
             _db = _context.Set<T>();
         }
-
-
-
-
         public async Task<T?> GetAsync<TKey>(TKey id, params Expression<Func<T, object>>[] includes)
         {
             IQueryable<T> query = _db;

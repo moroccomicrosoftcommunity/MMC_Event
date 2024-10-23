@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MediatR;
-using EventService.Domain.DTOs;
+using EventServices.Domain.DTOs;
 
-namespace EventService.Application.Features.Event.Queries
+namespace EventServices.Application.Features.EventFeature.Queries
 {
 
     public record EventOnlyFindByIdQuery(Guid Id) : IRequest<EventOnlyGetDTO>;

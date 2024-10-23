@@ -1,9 +1,8 @@
-﻿
-using EventService.Application.Features.Program.Commands;
-using EventService.Application.Features.Program.Queries;
+using EventServices.Application.Features.Program.Commands;
+using EventServices.Application.Features.Program.Queries;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EventService.APi.Controllers
+namespace EventServices.APi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

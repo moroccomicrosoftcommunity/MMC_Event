@@ -1,6 +1,6 @@
 ﻿using MediatR;
-using EventService.Domain.DTOs;
+using EventServices.Domain.DTOs;
 
-namespace EventService.Application.Features.Event.Queries;
+namespace EventServices.Application.Features.EventFeature.Queries;
 
 public record EventFindQuery(Guid Id) : IRequest<EventGetDTO>;

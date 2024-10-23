@@ -1,13 +1,9 @@
-﻿using EventService.API;
-using EventService.API.Services;
-using EventService.Application.Features.Event.Queries;
-using EventService.Application.Features.Session.Commands;
-using EventService.Application.Features.Session.Queries;
-using MediatR;
-using Microsoft.AspNetCore.Http;
+﻿using EventServices.API.Services;
+using EventServices.Application.Features.Session.Commands;
+using EventServices.Application.Features.Session.Queries;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EventService.APi.Controllers
+namespace EventServices.APi.Controllers
 {
 
     [Route("api/[controller]")]

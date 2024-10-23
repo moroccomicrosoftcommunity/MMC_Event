@@ -1,7 +1,7 @@
 using Azure.Storage.Blobs;
-using EventService.API.Services;
-using EventService.Application;
-using EventService.Infrastructure;
+using EventServices.API.Services;
+using EventServices.Infrastructure;
+using EventServices.Application;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);

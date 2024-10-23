@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using EventService.Application.Interfaces;
+using EventServices.Application.Interfaces;
 
-namespace EventService.Application.Features.Event.Commands;
+namespace EventServices.Application.Features.EventFeature.Commands;
 
 public class EventDeleteCmdHandler : IRequestHandler<EventDeleteCmd, bool>
 {

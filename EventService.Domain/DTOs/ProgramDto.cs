@@ -1,11 +1,6 @@
-﻿using EventService.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EventServices.Domain.Entities;
 
-namespace EventService.Domain.DTOs
+namespace EventServices.Domain.DTOs
 {
     public record ProgramGetDTO
     (

@@ -1,39 +1,29 @@
 ﻿using MediatR;
-using EventService.Application.Interfaces;
-using EventService.Domain.DTOs;
+using EventServices.Application.Interfaces;
+using EventServices.Domain.DTOs;
+using AutoMapper;
+using EventServices.Domain.Entities;
 
-namespace EventService.Application.Features.Event.Commands;
+namespace EventServices.Application.Features.EventFeature.Commands;
 
 public class EventCreateCmdHandler : IRequestHandler<EventCreateCmd, EventGetDTO>
 {
     private readonly IUnitOfService _service;
-    public EventCreateCmdHandler(IUnitOfService service) => _service = service;
+    private readonly IMapper _mapper;
+    public EventCreateCmdHandler(IUnitOfService service, IMapper mapper)
+    {
+        _service = service;
+        _mapper = mapper;
+    }
 
 
 
 
     public async Task<EventGetDTO> Handle(EventCreateCmd request, CancellationToken cancellationToken)
     {
-        var eventPostDTO = new EventPostDTO
-        (
-            request.Title,
-            request.Address,
-            request.Description,
-            request.ImagePath,
-            request.ImageListEventPath,
-            request.TypeEvent,
-            request.IsAvailable,
-            request.YoutubeLink,
-            request. GalleryLink,
-            request.EventStatus,
-            request.StartDate,
-            request.EndDate,
-            request.CityId,
-            request.ThemeId,
-            request.ProgramId
-        );
+        
 
-        var @event = await _service.EventService.CreateAsync(eventPostDTO);
+        var @event = await _service.EventService.CreateAsync(_mapper.Map<Event>(request),request.ImageDetailEventFile,request.ImageListEventFile);
         return @event;
     }
 }

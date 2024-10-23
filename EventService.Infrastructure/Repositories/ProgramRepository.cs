@@ -1,15 +1,10 @@
-﻿using EventService.Application.IRepositories;
-using EventService.Domain.Entities;
-using EventService.Infrastructure.Data;
+﻿using EventServices.Application.IRepositories;
+using EventServices.Domain.Entities;
+using EventServices.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace EventService.Infrastructure.Repositories
+namespace EventServices.Infrastructure.Repositories
 {
     public class ProgramRepository : Repository<Program>, IProgramRepository
     {
@@ -22,9 +17,6 @@ namespace EventService.Infrastructure.Repositories
             _context = db;
             _db = _context.Set<Program>();
         }
-        
-
-
         public async Task<IEnumerable<Program>> FindAllProgramOnly(params Expression<Func<Program, object>>[] includes)
         {
             IQueryable<Program> query = _db;

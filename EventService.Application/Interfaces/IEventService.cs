@@ -1,11 +1,8 @@
-﻿using EventService.Domain.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EventServices.Domain.DTOs;
+using EventServices.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 
-namespace EventService.Application.Interfaces
+namespace EventServices.Application.Interfaces
 {
     public interface IEventService
     {
@@ -13,8 +10,7 @@ namespace EventService.Application.Interfaces
         Task<IEnumerable<EventGetDTO>> FindAllAsync();
         Task<IEnumerable<EventOnlyGetDTO>> FindAllEventOnlyAsync();
         Task<EventOnlyGetDTO> FindEventOnlyByIdAsync(Guid id);
-
-        Task<EventGetDTO> CreateAsync(EventPostDTO eventPostDTO);
+        Task<EventGetDTO> CreateAsync(Event @event, IFormFile imageDetailEventFile, IFormFile imageListEventFile);
         Task<EventGetDTO> UpdateAsync(EventPutDTO eventPutDTO);
         Task<IEnumerable<EventGetDTO>> FindAllByProgramIdAsync(Guid Id);
         Task<bool> DeleteAsync(Guid id);

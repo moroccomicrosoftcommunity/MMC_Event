@@ -1,9 +1,7 @@
-﻿
-using EventService.API;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EventService.APi.Controllers
+namespace EventServices.APi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

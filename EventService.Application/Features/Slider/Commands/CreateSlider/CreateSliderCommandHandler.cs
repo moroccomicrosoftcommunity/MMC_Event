@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
-using EventService.Application.Interfaces;
-using EventService.Domain.DTOs;
+using EventServices.Application.Interfaces;
+using EventServices.Domain.DTOs;
+using EventServices.Application.Interfaces;
 using MediatR;
 
-namespace EventService.Application.Features.Slider.Commands.CreateSlider;
+namespace EventServices.Application.Features.Slider.Commands.CreateSlider;
 
 public class CreateSliderCommandHandler : IRequestHandler<CreateSliderCommand,SliderDto>
 {

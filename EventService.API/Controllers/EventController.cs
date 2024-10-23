@@ -1,9 +1,9 @@
-﻿using EventService.API.Services;
-using EventService.Application.Features.Event.Commands;
-using EventService.Application.Features.Event.Queries;
+﻿using EventServices.API.Services;
+using EventServices.Application.Features.EventFeature.Commands;
+using EventServices.Application.Features.EventFeature.Queries;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EventService.APi.Controllers
+namespace EventServices.APi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -61,7 +61,7 @@ namespace EventService.APi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(EventCreateCmd cmd)
+        public async Task<IActionResult> Create([FromForm] EventCreateCmd cmd)
         {
             var @event = await Mediator.Send(cmd);
             return CreatedAtAction(nameof(Find), new { id = @event.Id }, @event);
