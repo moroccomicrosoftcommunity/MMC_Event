@@ -15,7 +15,7 @@ namespace EventService.Domain.DTOs
         string Title,
         string? Address,
         string? Description,
-        string? ImagePath,
+        string? ImageDetailEventPath,
         string? ImageListEventPath,
         EventType? TypeEvent,
         bool IsAvailable,
