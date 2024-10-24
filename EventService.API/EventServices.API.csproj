@@ -25,4 +25,9 @@
   <ItemGroup>
     <Folder Include="wwwroot\Files\" />
   </ItemGroup>
+  <ItemGroup>
+  <None Update="wwwroot\Files\*">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
 </Project>

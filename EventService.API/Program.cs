@@ -45,13 +45,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+string filesDirectory = Path.Combine(builder.Environment.ContentRootPath, "wwwroot", "Files");
+if (!Directory.Exists(filesDirectory))
+{
+    Directory.CreateDirectory(filesDirectory);
+}
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider = new PhysicalFileProvider(
-        Path.Combine(builder.Environment.ContentRootPath, "wwwroot/Files")),
+    FileProvider = new PhysicalFileProvider(filesDirectory),
     RequestPath = "/Resources"
 });
-
 
 app.UseAuthorization();
 
