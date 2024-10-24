@@ -38,7 +38,7 @@ namespace EventServices.Application.Services
         }
         public async Task<IEnumerable<ProgramGetDTO>> FindAllAsync()
         {
-            var programs = await _uow.ProgramRepository.GetAllAsync(p => p.Events);
+            var programs = await _uow.ProgramRepository.GetAllAsync(null,p => p.Events);
 
             if (programs is null) return null;
 

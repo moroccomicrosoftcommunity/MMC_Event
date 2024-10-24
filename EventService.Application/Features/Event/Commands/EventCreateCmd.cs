@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using EventServices.Domain.DTOs;
 using Azure.Core;
+using EventService.Domain.DTOs;
+using EventService.Domain.Enums;
 using Microsoft.AspNetCore.Http;
 
 namespace EventServices.Application.Features.EventFeature.Commands;
@@ -12,6 +14,11 @@ public record EventCreateCmd
     string? Description,
     IFormFile? ImageDetailEventFile,
     IFormFile? ImageListEventFile,
+    EventType? TypeEvent,
+    bool IsAvailable,
+    string? YoutubeLink,
+    string? GalleryLink,
+    EventStatus? EventStatus,
     DateTime? StartDate,
     DateTime? EndDate,
     Guid CityId,

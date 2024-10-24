@@ -55,7 +55,7 @@ namespace EventServices.Application.Services
         }
         public async Task<IEnumerable<SessionGetDTO>> FindAllAsync()
         {
-            var sessions = await _uow.SessionRepository.GetAllAsync(s=>s.Event);
+            var sessions = await _uow.SessionRepository.GetAllAsync(null,s=>s.Event);
 
             if (sessions is null) return null;
 

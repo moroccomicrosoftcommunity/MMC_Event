@@ -1,4 +1,12 @@
-﻿namespace EventServices.Domain.DTOs
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using EventService.Domain.Enums;
+using EventServices.Domain.DTOs;
+
+namespace EventService.Domain.DTOs
 {
 
     public record EventGetDTO
@@ -7,8 +15,13 @@
         string Title,
         string? Address,
         string? Description,
-        string? ImageDetailEventPath,
+        string? ImagePath,
         string? ImageListEventPath,
+        EventType? TypeEvent,
+        bool IsAvailable,
+        string? YoutubeLink,
+        string? GalleryLink,
+        EventStatus? EventStatus,
         DateTime? StartDate,
         DateTime? EndDate,
         Guid CityId, 
@@ -27,6 +40,11 @@
         string? Description,
         string? ImageDetailEventPath,
         string? ImageListEventPath,
+        EventType? TypeEvent,
+        bool IsAvailable,
+        string? YoutubeLink,
+        string? GalleryLink,
+        EventStatus? EventStatus,
         DateTime? StartDate,
         DateTime? EndDate,
         Guid CityId,
@@ -42,6 +60,11 @@
         string? Description,
         string? ImageDetailEventPath,
         string? ImageListEventPath,
+        EventType? TypeEvent,
+        bool IsAvailable,
+        string? YoutubeLink,
+        string? GalleryLink,
+        EventStatus? EventStatus,
         DateTime? StartDate,
         DateTime? EndDate,
         Guid CityId,
@@ -57,6 +80,11 @@
         string? Description,
         string? ImageDetailEventPath,
         string? ImageListEventPath,
+        EventType? TypeEvent,
+        bool IsAvailable,
+        string? YoutubeLink,
+        string? GalleryLink,
+        EventStatus? EventStatus,
         DateTime? StartDate,
         DateTime? EndDate,
         Guid CityId,

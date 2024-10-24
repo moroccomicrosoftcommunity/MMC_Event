@@ -1,4 +1,6 @@
-﻿namespace EventServices.Domain.Entities
+﻿using EventService.Domain.Entities;
+
+namespace EventServices.Domain.Entities
 {
     public class Program
     {

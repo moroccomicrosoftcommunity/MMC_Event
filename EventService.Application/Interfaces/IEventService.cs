@@ -1,4 +1,6 @@
-﻿using EventServices.Domain.DTOs;
+﻿using EventService.Domain.DTOs;
+using EventService.Domain.Entities;
+using EventServices.Domain.DTOs;
 using EventServices.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 
@@ -14,5 +16,7 @@ namespace EventServices.Application.Interfaces
         Task<EventGetDTO> UpdateAsync(Event @event, IFormFile imageDetailEventFile, IFormFile imageListEventFile);
         Task<IEnumerable<EventGetDTO>> FindAllByProgramIdAsync(Guid Id);
         Task<bool> DeleteAsync(Guid id);
+        Task<IEnumerable<EventGetDTO>> FindAllPastEvent();
+        Task<IEnumerable<EventGetDTO>> FindNextEvent();
     }
 }

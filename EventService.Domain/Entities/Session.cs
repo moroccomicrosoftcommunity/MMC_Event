@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EventService.Domain.Entities;
 
 namespace EventServices.Domain.Entities
 {

@@ -22,7 +22,7 @@ namespace EventService.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("EventServices.Domain.Entities.Event", b =>
+            modelBuilder.Entity("EventService.Domain.Entities.Event", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -43,11 +43,20 @@ namespace EventService.Infrastructure.Migrations
                     b.Property<string>("EventN")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("EventStatus")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GalleryLink")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageDetailEventPath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageListEventPath")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LinkRegister")
                         .HasColumnType("nvarchar(max)");
@@ -66,6 +75,9 @@ namespace EventService.Infrastructure.Migrations
 
                     b.Property<int?>("TypeEvent")
                         .HasColumnType("int");
+
+                    b.Property<string>("YoutubeLink")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -161,7 +173,7 @@ namespace EventService.Infrastructure.Migrations
                     b.ToTable("Sliders");
                 });
 
-            modelBuilder.Entity("EventServices.Domain.Entities.Event", b =>
+            modelBuilder.Entity("EventService.Domain.Entities.Event", b =>
                 {
                     b.HasOne("EventServices.Domain.Entities.Program", "Program")
                         .WithMany("Events")
@@ -172,7 +184,7 @@ namespace EventService.Infrastructure.Migrations
 
             modelBuilder.Entity("EventServices.Domain.Entities.Session", b =>
                 {
-                    b.HasOne("EventServices.Domain.Entities.Event", "Event")
+                    b.HasOne("EventService.Domain.Entities.Event", "Event")
                         .WithMany("Sessions")
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -181,7 +193,7 @@ namespace EventService.Infrastructure.Migrations
                     b.Navigation("Event");
                 });
 
-            modelBuilder.Entity("EventServices.Domain.Entities.Event", b =>
+            modelBuilder.Entity("EventService.Domain.Entities.Event", b =>
                 {
                     b.Navigation("Sessions");
                 });

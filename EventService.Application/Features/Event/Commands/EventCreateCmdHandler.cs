@@ -2,6 +2,8 @@
 using EventServices.Application.Interfaces;
 using EventServices.Domain.DTOs;
 using AutoMapper;
+using EventService.Domain.DTOs;
+using EventService.Domain.Entities;
 using EventServices.Domain.Entities;
 
 namespace EventServices.Application.Features.EventFeature.Commands;

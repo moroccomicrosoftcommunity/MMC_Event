@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
 using EventServices.Application.Features.EventFeature.Commands;
+using EventService.Domain.DTOs;
+using EventService.Domain.Entities;
 using EventServices.Application.Features.Slider.Commands.CreateSlider;
-using EventServices.Application.Features.Slider.Commands.UpdateSlider;
-using EventServices.Domain.DTOs;
 using EventServices.Domain.Entities;
+using EventServices.Domain.DTOs;
+using EventServices.Application.Features.Slider.Commands.UpdateSlider;
+
 namespace EventServices.Application.Mapping
 {
 
@@ -11,7 +14,6 @@ namespace EventServices.Application.Mapping
     {
         public AutoMapperProfile()
         {
-
             //Event Mapping
             CreateMap<Event, EventGetDTO>();
             CreateMap<Event, EventOnlyGetDTO>();
@@ -29,8 +31,6 @@ namespace EventServices.Application.Mapping
             CreateMap<Program, ProgramOnlyGetDTO>();
             CreateMap<ProgramPostDTO, Program>();
             CreateMap<ProgramPutDTO, Program>();
-            
-            
             //SliderMapping
             CreateMap<Slider, SliderDto>().ReverseMap();
             CreateMap<Slider, UpdateSliderCommand>().ReverseMap();

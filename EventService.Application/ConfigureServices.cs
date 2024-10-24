@@ -20,7 +20,7 @@ namespace EventServices.Application
             services.AddScoped<IUnitOfService, UnitOfService>();
             services.AddScoped<IFileService,FileService>();
             services.AddScoped<ISliderService, SliderService>();
-            services.AddScoped<IEventService, EventService>();
+            services.AddScoped<IEventService, Services.EventService>();
             services.AddScoped<IProgramService, ProgramService>();
             services.AddScoped<ISessionService, SessionService>();
             //Broker Injection

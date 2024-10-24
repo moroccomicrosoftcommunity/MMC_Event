@@ -24,9 +24,14 @@ namespace EventServices.Infrastructure.Repositories
 
             return await query.FirstOrDefaultAsync(e => EF.Property<TKey>(e, "Id").Equals(id));
         }
-        public async Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] includes)
+        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> filter = null, params Expression<Func<T, object>>[] includes)
         {
             IQueryable<T> query = _db;
+            // Apply the filter if provided
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
 
             foreach (var item in includes)
                 query = query.Include(item);

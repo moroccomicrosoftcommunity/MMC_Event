@@ -1,8 +1,8 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using EventService.Domain.DTOs;
+using EventService.Domain.Entities;
 using EventServices.Application.Interfaces;
-using EventServices.Domain.DTOs;
-using AutoMapper;
-using EventServices.Domain.Entities;
+using MediatR;
 namespace EventServices.Application.Features.EventFeature.Commands;
 public class EventUpdateCmdHandler : IRequestHandler<EventUpdateCmd, EventGetDTO>
 {
@@ -15,7 +15,6 @@ public class EventUpdateCmdHandler : IRequestHandler<EventUpdateCmd, EventGetDTO
     }
     public async Task<EventGetDTO> Handle(EventUpdateCmd request, CancellationToken cancellationToken)
     {
-        
         var @event = await _service.EventService.UpdateAsync(_mapper.Map<Event>(request),request.ImageDetailEventFile,request.ImageListEventFile);
         return @event;
     }

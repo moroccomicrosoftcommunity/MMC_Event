@@ -1,4 +1,5 @@
-﻿using EventServices.Domain.Entities;
+﻿using EventService.Domain.Entities;
+using EventServices.Domain.Entities;
 using EventServices.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
