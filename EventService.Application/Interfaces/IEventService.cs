@@ -11,7 +11,7 @@ namespace EventServices.Application.Interfaces
         Task<IEnumerable<EventOnlyGetDTO>> FindAllEventOnlyAsync();
         Task<EventOnlyGetDTO> FindEventOnlyByIdAsync(Guid id);
         Task<EventGetDTO> CreateAsync(Event @event, IFormFile imageDetailEventFile, IFormFile imageListEventFile);
-        Task<EventGetDTO> UpdateAsync(EventPutDTO eventPutDTO);
+        Task<EventGetDTO> UpdateAsync(Event @event, IFormFile imageDetailEventFile, IFormFile imageListEventFile);
         Task<IEnumerable<EventGetDTO>> FindAllByProgramIdAsync(Guid Id);
         Task<bool> DeleteAsync(Guid id);
     }

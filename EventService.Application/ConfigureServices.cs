@@ -18,6 +18,7 @@ namespace EventServices.Application
             });
             //Services Injection
             services.AddScoped<IUnitOfService, UnitOfService>();
+            services.AddScoped<IFileService,FileService>();
             services.AddScoped<ISliderService, SliderService>();
             services.AddScoped<IEventService, EventService>();
             services.AddScoped<IProgramService, ProgramService>();

@@ -68,7 +68,7 @@ namespace EventServices.APi.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update(EventUpdateCmd cmd)
+        public async Task<IActionResult> Update([FromForm] EventUpdateCmd cmd)
         {
             try
             {

@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
+using EventServices.Application.Features.EventFeature.Commands;
 using EventServices.Application.Features.Slider.Commands.CreateSlider;
 using EventServices.Application.Features.Slider.Commands.UpdateSlider;
-using EventServices.Domain.DTOs;
-using EventServices.Domain.Entities;
-using EventServices.Application.Features.EventFeature.Commands;
 using EventServices.Domain.DTOs;
 using EventServices.Domain.Entities;
 namespace EventServices.Application.Mapping
@@ -19,6 +17,7 @@ namespace EventServices.Application.Mapping
             CreateMap<Event, EventOnlyGetDTO>();
             CreateMap<EventPostDTO, Event>();
             CreateMap<EventCreateCmd, Event>();
+            CreateMap<EventUpdateCmd, Event>();
             CreateMap<EventPutDTO, Event>();
             //Session Mapping
             CreateMap<Session, SessionGetDTO>();
