@@ -8,10 +8,9 @@ using System.Text.Json.Serialization;
 //
 var options = new WebApplicationOptions
 {
-    WebRootPath = "wwwroot" // Sets the default web root folder
+    WebRootPath = "wwwroot"
 };
 var builder = WebApplication.CreateBuilder(options);
-//var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationServices();
 builder.Services.AddControllers();
