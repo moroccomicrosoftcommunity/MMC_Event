@@ -27,6 +27,6 @@ public class Event
     public string? LinkRegister { get;  set; }
     
     public ICollection<Session>? Sessions { get;  set; }
+    public DateTime CreatedAt { get; } = DateTime.Now;
 
-    
 }

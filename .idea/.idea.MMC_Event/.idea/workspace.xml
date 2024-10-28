@@ -14,6 +14,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d4420251-b197-4f58-8af6-4ea327e26d31" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MMC_Event/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MMC_Event/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventService.Application/Services/EventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Services/EventService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventService.Domain/Entities/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Domain/Entities/Event.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventService.Domain/Entities/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Domain/Entities/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventService.Domain/Entities/Session.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Domain/Entities/Session.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,6 +183,9 @@
       <workItem from="1729718435695" duration="681000" />
       <workItem from="1729719425879" duration="855000" />
       <workItem from="1729795836936" duration="392000" />
+      <workItem from="1729796438928" duration="585000" />
+      <workItem from="1730105886278" duration="1002000" />
+      <workItem from="1730112519557" duration="244000" />
     </task>
     <servers />
   </component>

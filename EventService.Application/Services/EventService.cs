@@ -114,7 +114,7 @@ namespace EventServices.Application.Services
 
         public async Task<IEnumerable<EventGetDTO>> FindAllPastEvent()
         {
-            IEnumerable<Event> events = await _uow.EventRepository.GetAllAsync( e => e.EndDate < DateTime.Today);
+            IEnumerable<Event> events = (await _uow.EventRepository.GetAllAsync(e => e.EndDate < DateTime.Today)).OrderByDescending(e => e.StartDate);
             return _map.Map<IEnumerable<EventGetDTO>>(events);
         }
 

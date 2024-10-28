@@ -21,7 +21,7 @@ public class Session
     public Event Event { get; private set; }
 
     public Guid ModeId { get; private set; }
-    
+    public DateTime CreatedAt { get; } = DateTime.Now;
 
    
 
