@@ -3,8 +3,9 @@ using EventServices.Application.Interfaces;
 using EventServices.Domain.DTOs;
 using EventServices.Application.Interfaces;
 using MediatR;
+using EventServices.Domain.Entities;
 
-namespace EventServices.Application.Features.Slider.Commands.CreateSlider;
+namespace EventServices.Application.Features.SliderFeature.Commands.CreateSlider;
 
 public class CreateSliderCommandHandler : IRequestHandler<CreateSliderCommand,SliderDto>
 {
@@ -19,7 +20,7 @@ public class CreateSliderCommandHandler : IRequestHandler<CreateSliderCommand,Sl
 
     public async Task<SliderDto> Handle(CreateSliderCommand request, CancellationToken cancellationToken)
     {
-        Domain.Entities.Slider slider = _mapper.Map<Domain.Entities.Slider>(request);
-        return _mapper.Map<SliderDto>(await _unitOfService.SliderService.CreateAsync(slider));
+        Slider slider = _mapper.Map<Slider>(request);
+        return _mapper.Map<SliderDto>(await _unitOfService.SliderService.CreateAsync(slider,request.ImageFile));
     }
 }

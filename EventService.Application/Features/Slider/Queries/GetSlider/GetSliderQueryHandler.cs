@@ -4,7 +4,7 @@ using EventServices.Domain.DTOs;
 using EventServices.Application.Interfaces;
 using MediatR;
 
-namespace EventServices.Application.Features.Slider.Queries.GetSlider;
+namespace EventServices.Application.Features.SliderFeature.Queries.GetSlider;
 
 public class GetSliderQueryHandler : IRequestHandler<GetSliderQuery,SliderDto>
 {

@@ -2,8 +2,9 @@
 using EventServices.Domain.DTOs;
 using EventServices.Application.Interfaces;
 using MediatR;
+using EventServices.Domain.Entities;
 
-namespace EventServices.Application.Features.Slider.Commands.UpdateSlider;
+namespace EventServices.Application.Features.SliderFeature.Commands.UpdateSlider;
 
 public class UpdateSliderCommandHandler : IRequestHandler<UpdateSliderCommand,SliderDto>
 {
@@ -18,7 +19,7 @@ public class UpdateSliderCommandHandler : IRequestHandler<UpdateSliderCommand,Sl
 
     public async Task<SliderDto> Handle(UpdateSliderCommand request, CancellationToken cancellationToken)
     {
-        Domain.Entities.Slider slider = _mapper.Map<Domain.Entities.Slider>(request);
-        return _mapper.Map<SliderDto>(await _unitOfService.SliderService.UpdateAsync(request.Id,slider));
+        Slider slider = _mapper.Map<Slider>(request);
+        return _mapper.Map<SliderDto>(await _unitOfService.SliderService.UpdateAsync(request.Id,slider,request.ImageFile));
     }
 }

@@ -2,10 +2,10 @@
 using EventServices.Application.Features.EventFeature.Commands;
 using EventService.Domain.DTOs;
 using EventService.Domain.Entities;
-using EventServices.Application.Features.Slider.Commands.CreateSlider;
+using EventServices.Application.Features.SliderFeature.Commands.CreateSlider;
 using EventServices.Domain.Entities;
 using EventServices.Domain.DTOs;
-using EventServices.Application.Features.Slider.Commands.UpdateSlider;
+using EventServices.Application.Features.SliderFeature.Commands.UpdateSlider;
 
 namespace EventServices.Application.Mapping
 {

@@ -1,8 +1,8 @@
-﻿using EventServices.Application.Features.Slider.Commands.CreateSlider;
-using EventServices.Application.Features.Slider.Commands.DeleteSlider;
-using EventServices.Application.Features.Slider.Commands.UpdateSlider;
-using EventServices.Application.Features.Slider.Queries.GetAllSliders;
-using EventServices.Application.Features.Slider.Queries.GetSlider;
+﻿using EventServices.Application.Features.SliderFeature.Commands.CreateSlider;
+using EventServices.Application.Features.SliderFeature.Commands.DeleteSlider;
+using EventServices.Application.Features.SliderFeature.Commands.UpdateSlider;
+using EventServices.Application.Features.SliderFeature.Queries.GetAllSliders;
+using EventServices.Application.Features.SliderFeature.Queries.GetSlider;
 using EventServices.APi.Controllers;
 using Microsoft.AspNetCore.Mvc;
 

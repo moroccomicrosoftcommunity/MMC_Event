@@ -1,7 +1,7 @@
 ﻿using EventServices.Application.Interfaces;
 using MediatR;
 
-namespace EventServices.Application.Features.Slider.Commands.DeleteSlider;
+namespace EventServices.Application.Features.SliderFeature.Commands.DeleteSlider;
 
 public class DeleteSliderCommandHandler : IRequestHandler<DeleteSliderCommand,bool>
 {

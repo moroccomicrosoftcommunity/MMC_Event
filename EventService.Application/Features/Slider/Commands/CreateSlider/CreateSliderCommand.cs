@@ -1,12 +1,13 @@
 ﻿using EventServices.Domain.DTOs;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 
-namespace EventServices.Application.Features.Slider.Commands.CreateSlider;
+namespace EventServices.Application.Features.SliderFeature.Commands.CreateSlider;
 
 public record CreateSliderCommand(    
     string Title,
     string Description,
-    string ImagePath,
+    IFormFile? ImageFile,
     bool IsDisabled,
     string MoreText,
     string MoreLink) 
