@@ -13,37 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4420251-b197-4f58-8af6-4ea327e26d31" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MMC_Event/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MMC_Event/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.API/Controllers/EventController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.API/Controllers/EventController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/ConfigureServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/ConfigureServices.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Commands/EventCreateCmd.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Commands/EventCreateCmd.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Commands/EventCreateCmdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Commands/EventCreateCmdHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Commands/EventUpdateCmdHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Commands/EventUpdateCmdHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventFindAllByProgramIdQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventFindAllByProgramIdQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventFindAllByProgramIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventFindAllByProgramIdQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventFindAllQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventFindAllQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventFindAllQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventFindAllQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventFindQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventFindQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventFindQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventFindQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventOnlyFindAllQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventOnlyFindAllQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventOnlyFindAllQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventOnlyFindAllQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventOnlyFindByIdQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventOnlyFindByIdQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventOnlyFindByIdQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/EventOnlyFindByIdQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/FindAllPastEventQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/FindAllPastEventQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/FindNextEventQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Features/Event/Queries/FindNextEventQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/IRepositories/IEventRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/IRepositories/IEventRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Interfaces/IEventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Interfaces/IEventService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Application/Mapping/AutoMapperProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Mapping/AutoMapperProfile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventService.Application/Services/EventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Application/Services/EventService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Domain/DTOs/EventDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Domain/DTOs/EventDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Domain/DTOs/ProgramDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Domain/DTOs/ProgramDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Domain/DTOs/SessionDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Domain/DTOs/SessionDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Domain/Entities/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Domain/Entities/Event.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Domain/Entities/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Domain/Entities/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Domain/Entities/Session.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Domain/Entities/Session.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Infrastructure/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Infrastructure/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Infrastructure/Data/IApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Infrastructure/Data/IApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventService.Infrastructure/Repositories/EventRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EventService.Infrastructure/Repositories/EventRepository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,27 +50,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.EventService.API: https.executor": "Run",
-    ".NET Launch Settings Profile.EventServices.API: https.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.EventService.API: https.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.EventServices.API: https.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\ziada\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\ziada\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\ziada\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\ziada\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\ziada\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\ziada\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.EventServices.API: https">
     <configuration name="EventService.API: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/EventService.API/EventService.API.csproj" />
@@ -207,7 +177,11 @@
       <workItem from="1729708720162" duration="1691000" />
       <workItem from="1729716641359" duration="1502000" />
       <workItem from="1729718435695" duration="681000" />
-      <workItem from="1729719425879" duration="583000" />
+      <workItem from="1729719425879" duration="855000" />
+      <workItem from="1729795836936" duration="392000" />
+      <workItem from="1729796438928" duration="585000" />
+      <workItem from="1730105886278" duration="1002000" />
+      <workItem from="1730112519557" duration="438000" />
     </task>
     <servers />
   </component>

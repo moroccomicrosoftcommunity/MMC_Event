@@ -7,6 +7,7 @@ namespace EventServices.Domain.Entities
         public Guid Id { get; private set; }
         public string Title { get; private set; }
         public ICollection<Event>? Events { get; private set; }
+        public DateTime CreatedAt { get; } = DateTime.Now;
 
         public Program(string title)
         {
