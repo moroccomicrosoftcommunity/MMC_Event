@@ -120,7 +120,7 @@ namespace EventServices.Application.Services
 
         public async Task<IEnumerable<EventGetDTO>> FindNextEvent()
         {
-            IEnumerable<Event> events = await _uow.EventRepository.GetAllAsync(e=>e.StartDate >= DateTime.Today && e.IsAvailable);
+            IEnumerable<Event> events = (await _uow.EventRepository.GetAllAsync(e=>e.StartDate >= DateTime.Today && e.IsAvailable)).OrderBy(e => e.StartDate);;
             return _map.Map<IEnumerable<EventGetDTO>>(events);
         }
     }
