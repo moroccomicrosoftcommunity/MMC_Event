@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EventService.Domain.Enums;
+﻿using EventService.Domain.Enums;
 using EventServices.Domain.DTOs;
 
 namespace EventService.Domain.DTOs
@@ -31,7 +26,6 @@ namespace EventService.Domain.DTOs
         Guid ThemeId
 
     );
-
     public record EventOnlyGetDTO
     (
         Guid Id,
@@ -52,7 +46,6 @@ namespace EventService.Domain.DTOs
         Guid ThemeId
 
     );
-
     public record EventPostDTO
     (
         string Title,
@@ -71,7 +64,6 @@ namespace EventService.Domain.DTOs
         Guid ThemeId,
         Guid? ProgramId
     );
-
     public record EventPutDTO
     (
         Guid Id,
