@@ -20,7 +20,7 @@ public class DevImagesController : ControllerBase
 
 
     [HttpPatch("UpdateEvent")]
-    public async Task<IActionResult> UpdateEvent(Guid id,[FromForm] DevEvent devEvent)
+    public async Task<IActionResult> UpdateEvent([FromForm] DevEvent devEvent)
     {
         Event existingEvent = await _unitOfWork.EventRepository.GetAsync(devEvent.Id);
         if (existingEvent is null) return null;
